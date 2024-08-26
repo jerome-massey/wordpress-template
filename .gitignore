@@ -8,3 +8,6 @@ wordpress/
 
 # Ignore secrets directory
 secrets/
+
+# Ignore nginx configuration
+nginx/
