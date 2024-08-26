@@ -38,7 +38,8 @@ This repository serves as a default template for setting up a WordPress environm
 4. **Build and start the containers:**
 
     ```sh
-    docker-compose up -d
+    export OP_SERVICE_ACCOUNT_TOKEN=<your-service-account-token> 
+    op run --env-file="./.env.op" -- docker compose up -d
     ```
 
 5. **Access the services:**
@@ -62,12 +63,6 @@ You can customize the services by modifying the `docker-compose.yaml` file and t
 
 Sensitive information such as database credentials is stored in the `.env.op` file, which is ignored by Git to prevent accidental exposure.
 
-## Instructions
-
-```sh
-export OP_SERVICE_ACCOUNT_TOKEN=<your-service-account-token> 
-op run --env-file="./.env.op" -- docker compose up -d
-```
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
