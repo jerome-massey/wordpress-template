@@ -6,4 +6,4 @@ wordpress/
 .env
 
 # Ignore secrets directory
-secrets/*
+secrets/
