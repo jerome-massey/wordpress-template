@@ -21,22 +21,26 @@ This repository serves as a default template for setting up a WordPress environm
     Create a `.env` file in the root directory of the project with the following content:
 
     ```plaintext
-    MYSQL_ROOT_PASSWORD=your_mysql_root_password
     MYSQL_DATABASE=your_mysql_database
     MYSQL_USER=your_mysql_user
-    MYSQL_PASSWORD=your_mysql_password
     WORDPRESS_DB_USER=your_mysql_user
-    WORDPRESS_DB_PASSWORD=your_mysql_password
     WORDPRESS_DB_NAME=your_mysql_database
     ```
+3. **Create a `.env.op` file:**
 
-3. **Build and start the containers:**
+    Create a `.env.op` file in the root directory of the project with the following content:
+
+    ```plaintext
+    MYSQL_ROOT_PASSWORD="op://<PATH>"
+    MYSQL_PASSWORD="op://<PATH>"
+
+4. **Build and start the containers:**
 
     ```sh
     docker-compose up -d
     ```
 
-4. **Access the services:**
+5. **Access the services:**
 
     - WordPress: [http://localhost:8000](http://localhost:8000)
     - phpMyAdmin: [http://localhost:8080](http://localhost:8080)
@@ -46,6 +50,7 @@ This repository serves as a default template for setting up a WordPress environm
 - `db_data/`: MySQL data directory (ignored by Git and Docker)
 - `wordpress/`: WordPress data directory (ignored by Git and Docker)
 - `.env`: Environment variables file (ignored by Git and Docker)
+- `.env.op` : Optional environment variables file (ignored by Git and Docker)
 - `docker-compose.yaml`: Docker Compose configuration file
 
 ## Customization
@@ -54,7 +59,7 @@ You can customize the services by modifying the `docker-compose.yaml` file and t
 
 ## Security
 
-Sensitive information such as database credentials is stored in the `.env` file, which is ignored by Git to prevent accidental exposure.
+Sensitive information such as database credentials is stored in the `.env.op` file, which is ignored by Git to prevent accidental exposure.
 
 ## License
 
