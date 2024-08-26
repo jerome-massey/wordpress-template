@@ -4,3 +4,6 @@ wordpress/
 
 # Ignore environment file
 .env
+
+# Ignore secrets directory
+.secrets/
